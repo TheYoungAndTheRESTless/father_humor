@@ -1,24 +1,23 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = 'https://www.countryliving.com/life/a27452412/best-dad-jokes/'
 
-page = requests.get(URL)
+def dad_jokes():
+    URL = 'https://www.countryliving.com/life/a27452412/best-dad-jokes/'
 
-soup = BeautifulSoup(page.content, 'html.parser')
+    page = requests.get(URL)
 
-ff_joke = soup.findAll(class_='body-ul')
-# ff_joke = soup.findAll('li')
+    soup = BeautifulSoup(page.content, 'html.parser')
+    ff_joke = soup.findAll(class_='body-ul')
 
-
-def get_family_friendly_jokes():
     jokelist = []
     for item in ff_joke:
-        jokes = item.text
-        print(jokes)
+        dad_joke = item.findAll('li')
+        for joke in dad_joke:
+            jokelist.append(joke.text)
+    print(jokelist[0])
 
 
-# print(soup)
 
 if __name__ == '__main__':
-    get_family_friendly_jokes()
+    dad_jokes()
