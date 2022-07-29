@@ -6,11 +6,11 @@ name = "father_humor_pip_package"
 version = "0.0.1"
 authors = [
   { name="Anthony Hill", email="anthonyhilldeveloper@gmail.com" },
-  { name="Brian Tarte", email="author@example.com" },
+  { name="Brian Tarte", email="brianjtarte@gmail.com" },
   { name="Ibraheem Ibraheem", email="iibraheem2001@gmail.com" },
   { name="Brendon Hampton", email="brendonhampton1988@gmail.com" },
 ]
-description = "A small example package"
+description = "father-humor is a PIP package that you can install to utilize the built-in import method and render dad jokes directly to your terminal or your project's front-end deployment."
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.7"

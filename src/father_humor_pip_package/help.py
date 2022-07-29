@@ -1,2 +1,10 @@
 def help_dad():
-    pass
+    """
+
+
+   """
+
+    print("Help dad will show you all available options on how to use this package")
+
+
+help_dad()
