@@ -2,10 +2,13 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
-name = "father_humor_package"
-version = "0.0.1"
+name = "father_humor_pip_package"
+version = "0.0.9"
 authors = [
-  { name="Example Author", email="author@example.com" },
+  { name="Anthony Hill", email="author@example.com" },
+  { name="Brian Tarte", email="author@example.com" },
+  { name="Ibraheem Ibraheem", email="author@example.com" },
+  { name="Brendon Hampton", email="brendonhampton1988@gmail.com" },
 ]
 description = "A small example package"
 readme = "README.md"
@@ -16,6 +19,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
 
 [project.urls]
 "Homepage" = "https://github.com/pypa/sampleproject"
