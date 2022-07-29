@@ -38,10 +38,6 @@ def dad_jokes():
         for joke in jokelist:
             fp.write(joke + '\n')
 
-if __name__ == '__main__':
-    dad_jokes()
-
-
 def star_wars():
     URL = 'https://www.littledayout.com/star-wars-jokes-puns-use-the-force-for-laughter/'
     file_path = r'src/father_humor_pip_package/star_wars.text'
