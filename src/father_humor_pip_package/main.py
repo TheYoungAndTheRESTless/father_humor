@@ -56,7 +56,7 @@ def star_wars(url='https://www.littledayout.com/star-wars-jokes-puns-use-the-for
 def programming(url='https://www.ajokeaday.com/categories/programmer-jokes?page=1'):
     file_path = r'programming.text'
 
-    jokelist = []
+    prog_jokelist = []
     if os.path.exists(file_path):
         print('file already exists')
     else:
@@ -68,12 +68,13 @@ def programming(url='https://www.ajokeaday.com/categories/programmer-jokes?page=
         for item in code_joke:
             programming_joke = item.findAll('p')
             for joke in programming_joke:
-                jokelist.append(joke.text)
+                prog_jokelist.append(joke.text)
 
         # create a file
         with open(file_path, 'w') as fp:
-            for joke in jokelist:
+            for joke in prog_jokelist:
                 fp.write(joke + '\n')
+    return prog_jokelist[0]
 
 
 if __name__ == '__main__':
