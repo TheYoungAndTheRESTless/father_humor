@@ -1,5 +1,5 @@
 <center style="font-family:'Brush Script MT', cursive">
-<h1>⭐ ⭐ ⭐Father Humor⭐ ⭐ ⭐</h1>
+<h1><span style="color:brown">⭐ ⭐ ⭐ </span>Father Humor<span style="color:brown"> ⭐ ⭐ ⭐</span></h1>
 <h3>Description</h3>
 <p style="max-width:500px">father-humor is a PIP package that you can install to utilize the built-in `import` method and render dad jokes directly to your terminal or your project's front-end deployment.
 </p>
@@ -17,11 +17,12 @@ Ibraheem Ibraheem
 Brian Tarte
 [GitHub](https://github.com/brianjtarte) | [LinkedIn](https://www.linkedin.com/in/brianjtarte/)
 
-</center>
+
 
 ###  User Stories
 
 <details>
+<summary style="font-size:20px">Story 1</summary>
 
 As a user I want to install a pip package named "father-humor" for ease of integration
 
@@ -37,25 +38,33 @@ ensure that the user installs the package correctly
 ⭐ 1-2 hours 
 </details>
 <details>
+<summary style="font-size:20px">Story 2</summary>
 
 As a user I want to call an imported function(s) that return list(s) of scraped dad jokes
+
 **feature tasks**
- - user can import function(s) named based on maturity level
+
+user can import function(s) named based on maturity level
              
- **acceptance tests** 
- - ensure user can import all three functions
+ **acceptance tests**
+
+ ensure user can import all three functions
  
 **scale** 
 ⭐ ⭐ ⭐ 1-2 days 
 </details>
 <details>
+<summary style="font-size:20px">Story 3</summary>
 
 As a user I want to select the category of the jokes so I can deliver content to my audience
 
 **feature tasks**
- - user can import "father-humor.{}" 
- - user can import "father-humor.{}" 
- - user can import "father-humor.{}" 
+
+user can import "father-humor.{}"
+
+user can import "father-humor.{}"
+
+user can import "father-humor.{}" 
              
 **acceptance tests**
 
@@ -63,31 +72,51 @@ As a user I want to select the category of the jokes so I can deliver content to
 ⭐ ⭐  1 day
 </details>
 <details>
+<summary style="font-size:20px">Story 4</summary>
 
 As a user I want to scrape once and still have access to past scraped jokes so I don't have to keep scraping jokes.
+
 **feature tasks**
- - when user calls function for the first time the scraped jokes are saved in a new file 
- - when user calls function after first time, the file is updated
+
+when user calls function for the first time the scraped jokes are saved in a new file
+when user calls function after first time, the file is updated
  
- **acceptance tests** 
- - when function is called, text file exists
- -  check if the jokes are in the file
+ **acceptance tests**
+
+when function is called, text file exists
+
+check if the jokes are in the file
  
 **scale** 
 ⭐ ⭐ ⭐ 1-2 days
 </details>
 
 <details>
+<summary style="font-size:20px">Story 5</summary>
 
 As a user I want the jokes to display on the terminal so I have a visual representation of the joke
-**feature tasks**
-- user can instantiate imported function(s) to get jokes to display on the terminal 
- 
- **acceptance tests** 
 
-- when user instantiates function, user gets returned joke(s)
+**feature tasks**
+
+user can instantiate imported function(s) to get jokes to display on the terminal 
+ 
+ **acceptance tests**
+
+when user instantiates function, user gets returned joke(s)
 
 **scale** 
 ⭐ 1-2 hours
 
 </details>
+
+## How to Use Our Application
+
+### Links and URL's
+[Live Package](https://pypi.org/project/father-humor-pip-package/) | The living Downloadable Package
+
+[Test Package](https://test.pypi.org/project/father-humor-pip-package/) | Feature Testing
+
+### Download Our Package at
+[Father Humor pip Package](https://pypi.org/project/father-humor-pip-package/)
+
+</center>
