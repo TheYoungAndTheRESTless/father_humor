@@ -3,40 +3,32 @@ import os
 from bs4 import BeautifulSoup
 
 
-def dad_jokes():
-    URL = 'https://www.countryliving.com/life/a27452412/best-dad-jokes/'
-    file_path = r'src/father_humor_pip_package/dad_jokes.text'
+def dad_jokes(url='https://www.countryliving.com/life/a27452412/best-dad-jokes/'):
 
-    page = requests.get(URL)
-
-    soup = BeautifulSoup(page.content, 'html.parser')
-    ff_joke = soup.findAll(class_='body-ul')
-
+    file_path = r'dad_jokes.text'
     jokelist = []
-    for item in ff_joke:
-        dad_joke = item.findAll('li')
-        for joke in dad_joke:
-            jokelist.append(joke.text)
-    print(jokelist[0])
+
 
     if os.path.exists(file_path):
         print('file already exists')
     else:
-        page = requests.get(URL)
+
+        page = requests.get(url)
+
 
         soup = BeautifulSoup(page.content, 'html.parser')
+
         ff_joke = soup.findAll(class_='body-ul')
 
-        jokelist = []
         for item in ff_joke:
             dad_joke = item.findAll('li')
             for joke in dad_joke:
                 jokelist.append(joke.text)
 
-    # create a file
-    with open(file_path, 'w') as fp:
-        for joke in jokelist:
-            fp.write(joke + '\n')
+            with open(file_path, 'w') as fp:
+                for joke in jokelist:
+                    fp.write(joke + '\n')
+        return jokelist[0]
 
 def star_wars():
     URL = 'https://www.littledayout.com/star-wars-jokes-puns-use-the-force-for-laughter/'
@@ -72,9 +64,8 @@ def star_wars():
     with open(file_path, 'w') as fp:
         for joke in jokelist:
             fp.write(joke + '\n')
-            
-
 
 
 if __name__ == '__main__':
-    star_wars()
+    url = "https://scraping-test-site.brendonlh.repl.co/"
+    print(dad_jokes(url))
