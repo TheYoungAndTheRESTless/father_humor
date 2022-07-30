@@ -5,15 +5,18 @@ from bs4 import BeautifulSoup
 
 
 def dad_jokes(url='https://www.countryliving.com/life/a27452412/best-dad-jokes/'):
-    file_path = r'dad_jokes.text'
 
+
+    file_path = r'dad_jokes.text'
     jokelist = []
+
     if os.path.exists(file_path):
         print('file already exists')
     else:
         page = requests.get(url)
 
         soup = BeautifulSoup(page.content, 'html.parser')
+
         ff_joke = soup.findAll(class_='body-ul')
 
         for item in ff_joke:
@@ -25,7 +28,6 @@ def dad_jokes(url='https://www.countryliving.com/life/a27452412/best-dad-jokes/'
         with open(file_path, 'w') as fp:
             for joke in jokelist:
                 fp.write(joke + '\n')
-
 
 def star_wars(url='https://www.littledayout.com/star-wars-jokes-puns-use-the-force-for-laughter/'):
     file_path = r'star_wars.text'
