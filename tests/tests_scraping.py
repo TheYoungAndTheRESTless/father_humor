@@ -1,5 +1,6 @@
 import pytest
 import os
+import random
 from src.father_humor_pip_package.main import dad_jokes, star_wars, programming
 
 url = "https://scraping-test-site.brendonlh.repl.co/"
@@ -46,12 +47,38 @@ def test_programming():
     if os.path.exists("programming.text"):
         os.remove("programming.text")
         actual = programming(url)
-        expected = '\'here is a programming joke1 that is made of "p"tags\''
+        expected = '\'here is a fancy joke1 that is made of "li"tags'
         assert actual == expected
     else:
         actual = programming(url)
-        expected = '\'here is a programming joke1 that is made of "p"tags\''
+        expected = '\'here is a fancy joke1 that is made of "li"tags'
         assert actual == expected
+
+
+# @pytest.mark.skip("testing proof of life")
+def test_file_exist_dad_jokes():
+    if os.path.exists("dad_jokes.text"):
+       actual = True
+    else:
+        actual = False
+    expected = True
+    assert actual == expected
+def test_file_exist_starwars():
+    if os.path.exists("star_wars.text"):
+       actual = True
+    else:
+        actual = False
+    expected = True
+    assert actual == expected
+
+def test_file_exist_programming():
+    if os.path.exists("programming.text"):
+       actual = True
+    else:
+        actual = False
+    expected = True
+    assert actual == expected
+
 
 # @pytest.mark.skip("File Test")
 
