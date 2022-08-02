@@ -29,23 +29,19 @@ def dad_jokes(url='https://www.countryliving.com/life/a27452412/best-dad-jokes/'
     return jokelist[0]
 
 
-def star_wars(url='https://www.littledayout.com/star-wars-jokes-puns-use-the-force-for-laughter/'):
+def star_wars(url='https://www.menshealth.com/entertainment/a34577665/best-star-wars-jokes/'):
     file_path = r'star_wars.text'
-
     starwars_jokelist = []
     if os.path.exists(file_path):
         print('file already exists')
     else:
         page = requests.get(url)
-
         soup = BeautifulSoup(page.content, 'html.parser')
-        sw_joke = soup.findAll(class_='td-post-content')
-
+        sw_joke = soup.findAll(class_='body-h4')
+        # traverse the list of jokes and append to our new list to be used in the text file
         for item in sw_joke:
-            star_wars_joke = item.findAll('p')
-            for joke in star_wars_joke:
-                starwars_jokelist.append(joke.text)
-
+            star_wars_joke = item.text
+            starwars_jokelist.append(star_wars_joke)
         # create a file
         with open(file_path, 'w') as fp:
             for joke in starwars_jokelist:
