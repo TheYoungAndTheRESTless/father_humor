@@ -1,17 +1,46 @@
 import os
-from main import dad_jokes, star_wars, programming
 
 
 def help_dad():
     # function to run joke selection and functions from scrapers functions
+    def exit_function():
+        exit = input('Would you like to quit the setup or see another joke? (exit/Joke)')
+        if exit == 'exit':
+            os.system('cls' or 'clear')
+            return
+        else:
+            joke_selection()
+
     def joke_selection():
-        select_jokes = input('Please select from the above commands')
+        from main import dad_jokes, star_wars, programming
+        select_jokes = input('Please select from the above joke categories ')
         if select_jokes == 'dad_jokes':
-            dad_jokes()
+            print(f"""
+**************************************************************
+**************************************************************
+
+{dad_jokes()}
+**************************************************************
+**************************************************************""")
+            exit_function()
         elif select_jokes == 'star_wars_jokes':
-            star_wars()
+            print(f"""
+**************************************************************
+**************************************************************
+
+{star_wars()}
+**************************************************************
+**************************************************************""")
+            exit_function()
         elif select_jokes == 'programming_jokes':
-            programming()
+            print(f"""
+**************************************************************
+**************************************************************
+
+{programming()}
+**************************************************************
+**************************************************************""")
+            exit_function()
         else:
             joke_selection()
 
@@ -21,10 +50,11 @@ To Get Started, You simply follow the in terminal prompts.
  """
     commands_list = ['dad_jokes', 'star_wars_jokes', 'programming_jokes']
     print(welcome_text)
+
     check_for_packages = input('have you installed the required dependancies? BS4 and requests? (y/n)')
     if check_for_packages == 'y' or check_for_packages == 'Y' or check_for_packages == 'yes' or check_for_packages == 'Yes':
         print(f"""ok you are all set to continue with setup
-here is a list of commands to get started....
+here is a list of joke categories to get started....
 {commands_list[0]}, {commands_list[1]}, {commands_list[2]}""")
 
     else:
@@ -36,18 +66,22 @@ Standby While the automated system installs the required dependancies......
         print("""
         
 ssssssss                                            
-ss           sss   sss  sssssss  sssssss   sssssss      sssssss     sssssss
-ssssssss     sss   sss  sss      sss       ss           ss          ss
-      ss     sss   sss  ss       ss        sssss        sssssss     sssssss
-      ss     sss   sss  sss      sss       ss                ss          ss
-sssssssss    sssssssss  sssssss  sssssss   sssssss      sssssss     sssssss
+ss         sss   sss   sssssss   sssssss   sssssss   sssssss   sssssss
+ssssssss   sss   sss   sss       sss       ss        ss        ss
+      ss   sss   sss   ss        ss        sssss     sssssss   sssssss
+      ss   sss   sss   sss       sss       ss             ss        ss
+ssssssss   sssssssss   sssssss   sssssss   sssssss   sssssss   sssssss
         """)
 
         print(f"""-----------------------
 ok you are all set to continue with setup
-here is a list of commands to get started....
-----{commands_list[0]}, {commands_list[1]}, {commands_list[2]}----""")
+here is a list of joke categories to get started....
+----{commands_list[0]}----, {commands_list[1]}----, 
+----{commands_list[2]}----
+These commands once entered will create a text file with jokes according to the selected category.
+""")
     joke_selection()
+    print("""Congratulations!! you have successfully installed the Father Humor PiP package """)
 
 
 if __name__ == '__main__':

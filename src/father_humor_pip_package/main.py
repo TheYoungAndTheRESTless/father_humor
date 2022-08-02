@@ -13,7 +13,7 @@ def dad_jokes(url='https://www.countryliving.com/life/a27452412/best-dad-jokes/'
         with open('dad_jokes.text') as dj:
             rand_joke = dj.readlines()
             jokelist.append(rand_joke)
-        print(random.choice(rand_joke))
+        return random.choice(rand_joke)
     else:
         page = requests.get(url)
 
@@ -30,7 +30,8 @@ def dad_jokes(url='https://www.countryliving.com/life/a27452412/best-dad-jokes/'
         with open(file_path, 'w') as fp:
             for joke in jokelist:
                 fp.write(joke + '\n')
-    return jokelist[0]
+        print(random.choice(jokelist))
+        return jokelist[0]
 
 
 def star_wars(url='https://www.menshealth.com/entertainment/a34577665/best-star-wars-jokes/'):
@@ -52,6 +53,7 @@ def star_wars(url='https://www.menshealth.com/entertainment/a34577665/best-star-
         with open(file_path, 'w') as fp:
             for joke in starwars_jokelist:
                 fp.write(joke + '\n')
+        print(random.choice(starwars_jokelist))
     return starwars_jokelist[0]
 
 
@@ -79,6 +81,7 @@ def programming(url='https://betterprogramming.pub/101-funny-programmer-quotes-7
             for joke in prog_jokelist:
                 text = re.sub("\D(source)\D", '', joke)
                 fp.write(text + '\n')
+        print(random.choice(prog_jokelist))
     return prog_jokelist[0]
 
 
