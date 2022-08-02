@@ -1,7 +1,8 @@
-import numbers
 import requests
 import os
 from bs4 import BeautifulSoup
+import random
+import re
 
 
 def dad_jokes(url='https://www.countryliving.com/life/a27452412/best-dad-jokes/'):
@@ -9,7 +10,10 @@ def dad_jokes(url='https://www.countryliving.com/life/a27452412/best-dad-jokes/'
     jokelist = []
 
     if os.path.exists(file_path):
-        print('file already exists')
+        with open('dad_jokes.text') as dj:
+            rand_joke = dj.readlines()
+            jokelist.append(rand_joke)
+        print(random.choice(rand_joke))
     else:
         page = requests.get(url)
 
@@ -33,12 +37,14 @@ def star_wars(url='https://www.menshealth.com/entertainment/a34577665/best-star-
     file_path = r'star_wars.text'
     starwars_jokelist = []
     if os.path.exists(file_path):
-        print('file already exists')
+        with open('star_wars.text') as sw:
+            rand_joke = sw.readlines()
+            starwars_jokelist.append(rand_joke)
+        print(random.choice(rand_joke))
     else:
         page = requests.get(url)
         soup = BeautifulSoup(page.content, 'html.parser')
         sw_joke = soup.findAll(class_='body-h4')
-        # traverse the list of jokes and append to our new list to be used in the text file
         for item in sw_joke:
             star_wars_joke = item.text
             starwars_jokelist.append(star_wars_joke)
@@ -49,34 +55,35 @@ def star_wars(url='https://www.menshealth.com/entertainment/a34577665/best-star-
     return starwars_jokelist[0]
 
 
-def programming(url='https://www.ajokeaday.com/categories/programmer-jokes?page=1'):
+def programming(url='https://betterprogramming.pub/101-funny-programmer-quotes-76c7f335b92d'):
     file_path = r'programming.text'
 
     prog_jokelist = []
     if os.path.exists(file_path):
-        print('file already exists')
+        with open('programming.text') as pr:
+            rand_joke = pr.readlines()
+            prog_jokelist.append(rand_joke)
+        print(random.choice(rand_joke))
     else:
         page = requests.get(url)
 
         soup = BeautifulSoup(page.content, 'html.parser')
-        code_joke = soup.findAll(class_='jd-body')
+        code_joke = soup.findAll('li')
 
         for item in code_joke:
-            programming_joke = item.findAll('p')
-            for joke in programming_joke:
-                prog_jokelist.append(joke.text)
+            programming_joke = item.text
+            prog_jokelist.append(programming_joke)
 
         # create a file
         with open(file_path, 'w') as fp:
             for joke in prog_jokelist:
-                fp.write(joke + '\n')
+                text = re.sub("\D(source)\D", '', joke)
+                fp.write(text + '\n')
     return prog_jokelist[0]
 
 
 if __name__ == '__main__':
+    star_wars()
     programming()
+    dad_jokes()
 
-# numbers = range(0,5)
-# for num in numbers:
-#     num = num + 1
-#     print(num)
