@@ -46,11 +46,11 @@ def test_programming():
     if os.path.exists("programming.text"):
         os.remove("programming.text")
         actual = programming(url)
-        expected = '\'here is a programming joke1 that is made of "p"tags\''
+        expected = '\'here is a fancy joke1 that is made of "li"tags'
         assert actual == expected
     else:
         actual = programming(url)
-        expected = '\'here is a programming joke1 that is made of "p"tags\''
+        expected = '\'here is a fancy joke1 that is made of "li"tags'
         assert actual == expected
 
 # @pytest.mark.skip("File Test")
