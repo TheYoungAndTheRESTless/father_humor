@@ -74,7 +74,7 @@ def programming(url='https://www.ajokeaday.com/categories/programmer-jokes?page=
 
 
 if __name__ == '__main__':
-    programming()
+    star_wars()
 
 # numbers = range(0,5)
 # for num in numbers:
