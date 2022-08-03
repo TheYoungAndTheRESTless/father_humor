@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "father_humor_pip_package"
-version = "0.0.9"
+version = "0.0.20"
 authors = [
-  { name="Anthony Hill", email="author@example.com" },
-  { name="Brian Tarte", email="author@example.com" },
-  { name="Ibraheem Ibraheem", email="author@example.com" },
+  { name="Anthony Hill", email="anthonyhilldeveloper@gmail.com" },
+  { name="Brian Tarte", email="brianjtarte@gmail.com" },
+  { name="Ibraheem Ibraheem", email="iibraheem2001@gmail.com" },
   { name="Brendon Hampton", email="brendonhampton1988@gmail.com" },
 ]
-description = "A small example package"
+description = "father-humor is a PIP package that you can install to utilize the built-in import method and render dad jokes directly to your terminal or your project's front-end deployment."
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.7"
@@ -22,5 +22,5 @@ classifiers = [
 
 
 [project.urls]
-"Homepage" = "https://github.com/pypa/sampleproject"
-"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+"Homepage" = "https://github.com/TheYoungAndTheRESTless/father_humor"
+"Bug Tracker" = "https://github.com/orgs/TheYoungAndTheRESTless/projects/1/views/1"
