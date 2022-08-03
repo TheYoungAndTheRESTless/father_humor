@@ -1,7 +1,7 @@
 import pytest
 import os
 import random
-from src.father_humor_pip_package.main import dad_jokes, star_wars, programming
+from src.father_humor_pip_package.scraper import dad_jokes, star_wars, programming
 
 url = "https://scraping-test-site.brendonlh.repl.co/"
 

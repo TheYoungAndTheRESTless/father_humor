@@ -1,99 +1,114 @@
 import os
 from sys import platform
+import time
 
-
-def help_dad():
-    # function to run joke selection and functions from scrapers functions
-    # variables
-    commands_list = ['dad_jokes', 'star_wars_jokes', 'programming_jokes']
-
-    def check_installed_packages():
-        check_for_packages = input('have you installed the required dependancies? BS4 and requests? (y/n)')
-        if check_for_packages == 'y' or check_for_packages == 'Y' or check_for_packages == 'yes' or check_for_packages == 'Yes':
-            print(f"""ok you are all set to continue with setup
-        here is a list of joke categories to get started....
-        {commands_list[0]}, {commands_list[1]}, {commands_list[2]}""")
-
-        else:
-            print("""thats ok, we will install the required dependancies in order to fully utilize the great features our package offers 
-        Standby While the automated system installs the required dependancies......
-                """)
-            os.system('pip install bs4')
-            os.system('pip install requests')
-            print("""
-
-    ssssssss                                            
-    ss         sss   sss   sssssss   sssssss   sssssss   sssssss   sssssss
-    ssssssss   sss   sss   sss       sss       ss        ss        ss
-          ss   sss   sss   ss        ss        sssss     sssssss   sssssss
-          ss   sss   sss   sss       sss       ss             ss        ss
-    ssssssss   sssssssss   sssssss   sssssss   sssssss   sssssss   sssssss
-            """)
-
-            print(f"""-----------------------
-    ok you are all set to continue with setup
-    here is a list of joke categories to get started....
-    ----{commands_list[0]}----, {commands_list[1]}----, 
-    ----{commands_list[2]}----
-    These commands once entered will create a text file with jokes according to the selected category.
-    """)
-        joke_selection()
-
-    def exit_function():
-        exit = input('Would you like to quit the setup or see another joke? (exit/Joke)')
-        if exit == 'exit':
-            if platform == 'win32':
-                os.system('cls')
-                print("""Congratulations!! you have successfully installed the Father Humor PiP package """)
-            elif platform == 'darwin' or platform == 'linux' or platform == 'linux2':
-                os.system('clear')
-                print("""Congratulations!! you have successfully installed the Father Humor PiP package """)
-            return
-        else:
-            joke_selection()
-
-    def joke_selection():
-
-        select_jokes = input('Please select from the above joke categories ')
-        if select_jokes == 'dad_jokes':
-            print(f"""
-**************************************************************
-**************************************************************
-
-{dad_jokes()}
-**************************************************************
-**************************************************************""")
-            exit_function()
-        elif select_jokes == 'star_wars_jokes':
-            print(f"""
-**************************************************************
-**************************************************************
-
-{star_wars()}
-**************************************************************
-**************************************************************""")
-            exit_function()
-        elif select_jokes == 'programming_jokes':
-            print(f"""
-**************************************************************
-**************************************************************
-
-{programming()}
-**************************************************************
-**************************************************************""")
-            exit_function()
-        else:
-            joke_selection()
-
-    welcome_text = """Welcome to the Father Humor Pip Package Interactive Helper
+welcome_text = """Welcome to the Father Humor Pip Package Interactive Helper
 This guide is designed to automate you through the install process and show you some of the great features of the package
 To Get Started, You simply follow the in terminal prompts.
  """
 
+
+def help_dad():
+    time.sleep(1.5)
     print(welcome_text)
-    check_installed_packages()
-    from main import dad_jokes, star_wars, programming
+    time.sleep(5)
+    try:
+        from pick import pick
+        from scraper import dad_jokes, star_wars, programming
+
+        def jokes_loop():
+            def loop_jokes():
+                if platform == 'win32':
+                    os.system('cls')
+                elif platform == 'darwin' or platform == 'linux' or platform == 'linux2':
+                    os.system('clear')
+                time.sleep(2)
+                title = 'please select a category of jokes?: '
+                options = ['Dad Jokes', 'Star Wars', 'Programming', 'quit']
+                option, index = pick(options, title)
+                if option == 'Dad Jokes':
+                    time.sleep(1.5)
+                    print(f"""
+                    **************************************************************
+                    **************************************************************
+
+                    {dad_jokes()}
+                    **************************************************************
+                    **************************************************************""")
+                    time.sleep(4)
+                    loop_jokes()
+                elif option == 'Star Wars':
+                    time.sleep(1.5)
+                    print(f"""
+                    **************************************************************
+                    **************************************************************
+
+                    {star_wars()}
+                    **************************************************************
+                    **************************************************************""")
+                    time.sleep(4)
+                    loop_jokes()
+
+                elif option == 'Programming':
+                    time.sleep(1.5)
+                    print(f"""
+                    **************************************************************
+                    **************************************************************
+
+                    {programming()}
+                    **************************************************************
+                    **************************************************************""")
+                    time.sleep(4)
+                    loop_jokes()
+
+                else:
+                    if platform == 'win32':
+                        os.system('cls')
+                        time.sleep(1)
+                        print("""Congratulations!! you have successfully installed the Father Humor PiP package """)
+                        return
+                    elif platform == 'darwin' or platform == 'linux' or platform == 'linux2':
+                        os.system('clear')
+                        time.sleep(1)
+                        print("""Congratulations!! you have successfully installed the Father Humor PiP package """)
+                        return
+            loop_jokes()
+
+        if platform == 'win32':
+            os.system('cls')
+            time.sleep(1)
+            jokes_loop()
+        elif platform == 'darwin' or platform == 'linux' or platform == 'linux2':
+            os.system('clear')
+            time.sleep(2)
+            jokes_loop()
 
 
-if __name__ == '__main__':
-    help_dad()
+    except:
+        def install_packages():
+            time.sleep(5)
+            print("""It would appear you do not have the requirements to run this package properly 
+            We will install the required dependancies in order to fully utilize the great features our package offers
+            Standby While the automated system installs the required dependancies......
+            """)
+            time.sleep(1)
+            os.system('pip install bs4')
+            time.sleep(1)
+            os.system('pip install requests')
+            time.sleep(1)
+            os.system('pip install pick')
+            print("""
+
+                       ssssssss
+                       ss         sss   sss   sssssss   sssssss   sssssss   sssssss   sssssss
+                       ssssssss   sss   sss   sss       sss       ss        ss        ss
+                             ss   sss   sss   ss        ss        sssss     sssssss   sssssss
+                             ss   sss   sss   sss       sss       ss             ss        ss
+                       ssssssss   sssssssss   sssssss   sssssss   sssssss   sssssss   sssssss
+                               """)
+            help_dad()
+        install_packages()
+
+
+# if __name__ == '__main__':
+help_dad()
