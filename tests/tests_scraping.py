@@ -80,6 +80,3 @@ def test_file_exist_programming():
     assert actual == expected
 
 
-# @pytest.mark.skip("File Test")
-
-# def file_test
