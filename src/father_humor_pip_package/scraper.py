@@ -105,7 +105,7 @@ try:
                     os.system('clear')
                 time.sleep(2)
                 title = 'please select a category of jokes?: '
-                options = ['Dad Jokes', 'Star Wars', 'Programming', 'quit']
+                options = ['Dad Jokes', 'Star Wars', 'Programming', 'Quit']
                 option, index = pick(options, title)
                 if option == 'Dad Jokes':
                     time.sleep(1.5)
@@ -142,7 +142,7 @@ try:
                     time.sleep(4)
                     loop_jokes()
 
-                else:
+                elif option == "Quit":
                     if platform == 'win32':
                         os.system('cls')
                         time.sleep(1)
@@ -163,7 +163,6 @@ try:
             os.system('clear')
             time.sleep(2)
             jokes_loop()
-    helper()
 except:
         
         print("""It would appear you do not have the requirements to run this package properly 
@@ -200,8 +199,9 @@ except:
 
 
 
-if __name__ == '__main__':
-    # star_wars()
-    # programming()
-    # dad_jokes()
-    helper()
+# if __name__ == '__main__':
+#     # star_wars()
+#     # programming()
+#     # dad_jokes()
+#     # helper()
+#     pass
