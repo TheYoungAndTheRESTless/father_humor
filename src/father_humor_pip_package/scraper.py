@@ -15,16 +15,15 @@ try:
         jokelist = []
 
         if os.path.exists(file_path):
+            text_joke = []
             with open('dad_jokes.text') as dj:
                 rand_joke = dj.readlines()
                 jokelist.append(rand_joke)
-            # print(random.choice(rand_joke))
-            return random.choice(rand_joke)
+            text_joke.append(re.sub("\n", '', random.choice(rand_joke)))
+            return text_joke[0]
         else:
             page = requests.get(url)
-
             soup = BeautifulSoup(page.content, 'html.parser')
-
             ff_joke = soup.findAll(class_='body-ul')
 
             for item in ff_joke:
@@ -36,7 +35,6 @@ try:
             with open(file_path, 'w') as fp:
                 for joke in jokelist:
                     fp.write(joke + '\n')
-            # return random.choice(jokelist)
             return jokelist[0]
 
 
@@ -44,10 +42,12 @@ try:
         file_path = r'star_wars.text'
         starwars_jokelist = []
         if os.path.exists(file_path):
+            text_joke = []
             with open('star_wars.text') as sw:
                 rand_joke = sw.readlines()
                 starwars_jokelist.append(rand_joke)
-            return random.choice(rand_joke)
+            text_joke.append(re.sub("\n", '', random.choice(rand_joke)))
+            return text_joke[0]
 
         else:
             page = requests.get(url)
@@ -60,7 +60,6 @@ try:
             with open(file_path, 'w') as fp:
                 for joke in starwars_jokelist:
                     fp.write(joke + '\n')
-            # print(random.choice(starwars_jokelist))
             return starwars_jokelist[0]
 
 
@@ -69,10 +68,12 @@ try:
 
         prog_jokelist = []
         if os.path.exists(file_path):
+            text_joke = []
             with open('programming.text') as pr:
                 rand_joke = pr.readlines()
                 prog_jokelist.append(rand_joke)
-            return random.choice(rand_joke)
+            text_joke.append(re.sub("\n", '', random.choice(rand_joke)))
+            return text_joke[0]
         else:
             page = requests.get(url)
 
@@ -88,15 +89,16 @@ try:
                 for joke in prog_jokelist:
                     text = re.sub("\D(source)\D", '', joke)
                     fp.write(text + '\n')
-            # print(random.choice(prog_jokelist))
             return prog_jokelist[0]
 
+
     def helper():
-        welcome_text = """Welcome to the Father Humor Pip Package Interactive Helper
-    This guide is designed to automate you through the install process and show you some of the great features of the package
-    To Get Started, You simply follow the in terminal prompts.
+        welcome_text = """Welcome to the Father Humor Pip Package Interactive Helper.
+    This guide is designed to help you through the install process and show you some of the package's great features.
+    To get started, simply follow the in-terminal prompts.
     """
         print(welcome_text)
+
         def jokes_loop():
             def loop_jokes():
                 if platform == 'win32':
@@ -104,7 +106,7 @@ try:
                 elif platform == 'darwin' or platform == 'linux' or platform == 'linux2':
                     os.system('clear')
                 time.sleep(2)
-                title = 'please select a category of jokes?: '
+                title = 'Please select a category of jokes: '
                 options = ['Dad Jokes', 'Star Wars', 'Programming', 'Quit']
                 option, index = pick(options, title)
                 if option == 'Dad Jokes':
@@ -146,13 +148,14 @@ try:
                     if platform == 'win32':
                         os.system('cls')
                         time.sleep(1)
-                        print("""Congratulations!! you have successfully installed the Father Humor PiP package """)
+                        print("""Congratulations! You have successfully installed the Father Humor PiP package. """)
                         return
                     elif platform == 'darwin' or platform == 'linux' or platform == 'linux2':
                         os.system('clear')
                         time.sleep(1)
-                        print("""Congratulations!! you have successfully installed the Father Humor PiP package """)
+                        print("""Congratulations! You have successfully installed the Father Humor PiP package. """)
                         return
+
             loop_jokes()
 
         if platform == 'win32':
@@ -164,44 +167,27 @@ try:
             time.sleep(2)
             jokes_loop()
 except:
-        
-        print("""It would appear you do not have the requirements to run this package properly 
-            We will install the required dependancies in order to fully utilize the great features our package offers
-            Standby While the automated system installs the required dependancies......
+
+    print("""It would appear you do not have the requirements to run this package properly. 
+            We will install the required dependencies in order to fully utilize the great features our package offers.
+            Standby while the automated system installs the required dependencies...
             """)
 
-        dependancy_check = input("Would you like to install required dependancies? (N/Y)")
-        if dependancy_check == "Y" or dependancy_check == "y":
-            time.sleep(5)
-            os.system('pip install bs4')
-            time.sleep(1)
-            os.system('pip install requests')
-            time.sleep(1)
-            os.system('pip install pick')
-            print("""
+    dependency_check = input("Would you like to install required dependencies? (Y/n)")
+    if dependency_check == "Y" or dependency_check == "y":
+        time.sleep(5)
+        os.system('pip install bs4')
+        time.sleep(1)
+        os.system('pip install requests')
+        time.sleep(1)
+        os.system('pip install pick')
+        print("""
 
                         ssssssss
                         ss         sss   sss   sssssss   sssssss   sssssss   sssssss   sssssss
                         ssssssss   sss   sss   sss       sss       ss        ss        ss
-                                ss   sss   sss   ss        ss        sssss     sssssss   sssssss
-                                ss   sss   sss   sss       sss       ss             ss        ss
+                              ss   sss   sss   ss        ss        sssss     sssssss   sssssss
+                              ss   sss   sss   sss       sss       ss             ss        ss
                         ssssssss   sssssssss   sssssss   sssssss   sssssss   sssssss   sssssss
                                 """)
 
-
-
-
-
-
-
-
-
-
-
-
-# if __name__ == '__main__':
-#     # star_wars()
-#     # programming()
-#     # dad_jokes()
-#     # helper()
-#     pass
