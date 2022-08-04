@@ -4,7 +4,7 @@
 <p style="max-width:500px">father-humor is a PIP package that you can install to utilize the built-in `import` method and render dad jokes directly to your terminal or your project's front-end deployment.
 </p>
 
-**Initialize application:**
+## Initialize Application:
 To take advantage of the `father-humor-pip-package` utilize the native `import` method:
 - `from father_humor_pip_package import scraper.py`
   - This will give you access to the three functions, which scrape data from their respective websites and stores the data in text files:
