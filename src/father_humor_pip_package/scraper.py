@@ -82,7 +82,8 @@ try:
 
             for item in code_joke:
                 programming_joke = item.text
-                prog_jokelist.append(programming_joke)
+                new_text = re.sub("\D(source)\D", '', programming_joke)
+                prog_jokelist.append(new_text)
 
             # create a file
             with open(file_path, 'w') as fp:
@@ -118,7 +119,7 @@ try:
                     {dad_jokes()}
                     **************************************************************
                     **************************************************************""")
-                    time.sleep(4)
+                    time.sleep(8)
                     loop_jokes()
                 elif option == 'Star Wars':
                     time.sleep(1.5)
@@ -129,7 +130,7 @@ try:
                     {star_wars()}
                     **************************************************************
                     **************************************************************""")
-                    time.sleep(4)
+                    time.sleep(8)
                     loop_jokes()
 
                 elif option == 'Programming':
@@ -141,7 +142,7 @@ try:
                     {programming()}
                     **************************************************************
                     **************************************************************""")
-                    time.sleep(4)
+                    time.sleep(8)
                     loop_jokes()
 
                 elif option == "Quit":

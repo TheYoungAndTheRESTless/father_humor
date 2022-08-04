@@ -36,6 +36,7 @@ def test_star_wars_scrape():
     expected = '\'here is a fancy joke that is made of "p"tags'
     assert actual == expected
 
+
 # @pytest.mark.skip("test_star_wars_text")
 def test_star_wars_text():
     with open('star_wars.text') as sw:
@@ -51,6 +52,7 @@ def test_programming_scrape():
     actual = programming(url)
     expected = '\'here is a fancy joke that is made of "li"tags'
     assert actual == expected
+
 
 # @pytest.mark.skip("test_programming_text")
 def test_programming_text():
