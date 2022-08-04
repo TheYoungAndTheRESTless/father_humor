@@ -1,8 +1,19 @@
-<center style="font-family:'Brush Script MT', cursive">
+
 <h1><span style="color:brown">⭐ ⭐ ⭐ </span>Father Humor<span style="color:brown"> ⭐ ⭐ ⭐</span></h1>
 <h3>Description</h3>
 <p style="max-width:500px">father-humor is a PIP package that you can install to utilize the built-in `import` method and render dad jokes directly to your terminal or your project's front-end deployment.
 </p>
+
+**Initialize application:**
+To take advantage of the `father-humor-pip-package` utilize the native `import` method:
+- `from father_humor_pip_package import scraper.py`
+  - This will give you access to the three functions, which scrape data from their respective websites and stores the data in text files:
+    - `dad_jokes()`will give you a random dad joke
+    - `star_wars()`will give you a random Star Wars joke
+    - `programming()`will give you a random Software Developer joke
+  - In addition to the above functions, you can also take advantage of `helper()` which is an easy way to select random jokes from one of the three previously mentioned categories. 
+  - Lastly, the pip package will verify if you have the required dependencies installed, and if needed, will automate the process of installing them.
+
 <h3>Authors:</h3>
 
 Brendon Hampton
@@ -119,4 +130,4 @@ when user instantiates function, user gets returned joke(s)
 ### Download Our Package at
 [Father Humor pip Package](https://pypi.org/project/father-humor-pip-package/)
 
-</center>
+
