@@ -15,15 +15,15 @@ try:
         jokelist = []
 
         if os.path.exists(file_path):
+            text_joke = []
             with open('dad_jokes.text') as dj:
                 rand_joke = dj.readlines()
                 jokelist.append(rand_joke)
-            return random.choice(rand_joke)
+            text_joke.append(re.sub("\n", '', random.choice(rand_joke)))
+            return text_joke[0]
         else:
             page = requests.get(url)
-
             soup = BeautifulSoup(page.content, 'html.parser')
-
             ff_joke = soup.findAll(class_='body-ul')
 
             for item in ff_joke:
@@ -42,10 +42,12 @@ try:
         file_path = r'star_wars.text'
         starwars_jokelist = []
         if os.path.exists(file_path):
+            text_joke = []
             with open('star_wars.text') as sw:
                 rand_joke = sw.readlines()
                 starwars_jokelist.append(rand_joke)
-            return random.choice(rand_joke)
+            text_joke.append(re.sub("\n", '', random.choice(rand_joke)))
+            return text_joke[0]
 
         else:
             page = requests.get(url)
@@ -66,10 +68,12 @@ try:
 
         prog_jokelist = []
         if os.path.exists(file_path):
+            text_joke = []
             with open('programming.text') as pr:
                 rand_joke = pr.readlines()
                 prog_jokelist.append(rand_joke)
-            return random.choice(rand_joke)
+            text_joke.append(re.sub("\n", '', random.choice(rand_joke)))
+            return text_joke[0]
         else:
             page = requests.get(url)
 
@@ -186,3 +190,4 @@ except:
                               ss   sss   sss   sss       sss       ss             ss        ss
                         ssssssss   sssssssss   sssssss   sssssss   sssssss   sssssss   sssssss
                                 """)
+
