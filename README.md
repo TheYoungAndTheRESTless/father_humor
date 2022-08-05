@@ -55,7 +55,7 @@ As a user I want to call an imported function(s) that return list(s) of scraped 
 
 **feature tasks**
 
-user can import function(s) named based on maturity level
+user can import function(s) named based on categories
              
  **acceptance tests**
 
@@ -120,14 +120,12 @@ when user instantiates function, user gets returned joke(s)
 
 </details>
 
-## How to Use Our Application
 
 ### Links and URL's
 [Live Package](https://pypi.org/project/father-humor-pip-package/) | The living Downloadable Package
 
 [Test Package](https://test.pypi.org/project/father-humor-pip-package/) | Feature Testing
 
-### Download Our Package at
-[Father Humor pip Package](https://pypi.org/project/father-humor-pip-package/)
+
 
 
